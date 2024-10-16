@@ -31,7 +31,7 @@ export default function Navigation() {
           <div>
             <Link className='hover:opacity-80' href='/' title={t('title')}>
               <BaseImage
-                src='/images/tap4-ai.svg'
+                src='/images/favicon.svg'
                 alt={t('title')}
                 title={t('title')}
                 width={64}
@@ -39,6 +39,9 @@ export default function Navigation() {
                 className='size-[58px] lg:size-16'
               />
             </Link>
+          </div>
+          <div className='flex flex-col items-center lg:items-stretch'>
+            <p className='text-xl font-bold text-white lg:h-8 lg:text-[32px]'>AI Guides Hub</p>
           </div>
           {/* pc */}
           <div className='ml-auto flex h-full items-center gap-x-[46px]'>
