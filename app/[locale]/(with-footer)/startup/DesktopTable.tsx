@@ -23,7 +23,7 @@ export default function DesktopTable() {
           </TableRow>
         </TableHeader>
         <TableBody className='space-y-3'>
-          {STARTUP_LIST.map((item) => (
+          {(STARTUP_LIST || []).map((item) => (
             <TableRow
               key={item.DA}
               className='tr-rounded h-16 rounded-[4px] border-none bg-[#2C2D36] hover:bg-[#353746]'
