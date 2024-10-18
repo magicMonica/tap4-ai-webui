@@ -62,7 +62,7 @@ export async function POST(req: NextRequest) {
     const firstSubmitData = submitList[0];
     const res = await crawler({
       url: firstSubmitData.url!,
-      tags: categoryList!.map((item) => item.name),
+      tags: (categoryList ? categoryList : []).map((item) => item.name),
       callback_url: callbackUrl,
       key: cronKey,
     });

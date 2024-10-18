@@ -33,24 +33,8 @@ export default function Footer() {
 
   const SupportLinks = [
     {
-      title: 'Flux AI Image Generator',
-      href: 'https://flux-ai.io/',
-    },
-    {
-      title: 'Photo to Video AI',
-      href: 'https://dreammachineai.online/',
-    },
-    {
-      title: 'Flux Pro Image Generator',
-      href: 'https://flux-pro.net/',
-    },
-    {
-      title: t('tap4'),
-      href: 'https://tap4.ai/',
-    },
-    {
-      title: t('tattoo'),
-      href: 'https://tattooai.design/',
+      title: t('submit'),
+      href: 'https://aiguideshub.com/explore',
     },
   ];
 
@@ -74,7 +58,7 @@ export default function Footer() {
         </div>
         <div className='mt-5 flex flex-col items-center gap-y-5 lg:mt-0 lg:flex-row lg:items-stretch lg:gap-x-10'>
           <div className='flex w-full flex-col gap-2'>
-            <p className='font-bold'>{t('support')}</p>
+            <p className='font-bold'>{t('feature')}</p>
             {SupportLinks.map((item) => (
               <a
                 href={item.href}
@@ -88,7 +72,9 @@ export default function Footer() {
               </a>
             ))}
           </div>
+
           <div className='grid grid-cols-2 gap-x-10 gap-y-5 lg:grid-cols-1 lg:gap-3'>
+            <p className='font-bold'>{t('support')}</p>
             {INFO_LIST.map((item) => (
               <InfoLink key={item.href} href={item.href} title={item.title} />
             ))}
@@ -102,6 +88,9 @@ export default function Footer() {
             </a>
           </div>
         </div>
+      </div>
+      <div className='flex flex-col items-center pb-5'>
+        <p className='text-sm'>Copyright 2024 © AIGuidesHub.com All rights reserved.</p>
       </div>
     </footer>
   );
