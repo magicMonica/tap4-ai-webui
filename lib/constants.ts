@@ -21,4 +21,19 @@ export const FORM_PLACEHOLDER = 'https://aiguideshub.com/';
 
 export const WEBSITE_EXAMPLE = '<a href="https://aiguideshub.com/" title="AI Guides Hub">AI Guides Hub</a>';
 
-export const STARTUP_LIST = [];
+export const STARTUP_LIST = [
+  {
+    DA: 91,
+    Website: 'ProductHunt',
+    URL: 'https://www.producthunt.com/',
+    Price: 'Free',
+    Tag: '',
+  },
+  {
+    DA: 57,
+    Website: 'Toolify',
+    URL: 'http://www.toolify.ai/',
+    Price: 'Free',
+    Tag: '',
+  },
+];
