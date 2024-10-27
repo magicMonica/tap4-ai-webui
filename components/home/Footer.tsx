@@ -34,7 +34,7 @@ export default function Footer() {
   const SupportLinks = [
     {
       title: t('submit'),
-      href: 'https://aiguideshub.com/explore',
+      href: 'https://aiguideshub.com/submit',
     },
   ];
 
