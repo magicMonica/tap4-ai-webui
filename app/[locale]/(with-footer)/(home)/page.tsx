@@ -29,8 +29,8 @@ export async function generateMetadata({ params: { locale } }: { params: { local
       canonical: './',
     },
     icons: {
-      icon: './images/favicon.ico',
-      apple: './images/favicon.ico',
+      icon: './favicon.ico',
+      apple: './favicon.ico',
     },
   };
 }
