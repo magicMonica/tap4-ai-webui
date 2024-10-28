@@ -28,6 +28,10 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     alternates: {
       canonical: './',
     },
+    icons: {
+      icon: './images/favicon.ico',
+      apple: './images/favicon.ico',
+    },
   };
 }
 
@@ -38,7 +42,7 @@ export default async function Page() {
   const t = await getTranslations('Home');
   const [{ data: categoryList }, { data: navigationList }] = await Promise.all([
     supabase.from('navigation_category').select(),
-    supabase.from('web_navigation').select().order('collection_time', { ascending: false }).limit(12),
+    supabase.from('web_navigation').select().order('collection_time', { ascending: false }).limit(24),
   ]);
 
   return (
