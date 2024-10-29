@@ -27,9 +27,8 @@ function MatrixBackground() {
 
     // 每列字符的Y坐标
     const drops: number[] = [];
-    for (let i = 0; i < columns; ) {
+    for (let i = 0; i < columns; i += 1) {
       drops[i] = 1;
-      i += 1;
     }
 
     const draw = () => {
@@ -42,7 +41,7 @@ function MatrixBackground() {
       ctx.font = `${fontSize}px monospace`;
 
       // 逐列绘制字符
-      for (let i = 0; i < drops.length; ) {
+      for (let i = 0; i < drops.length; i += 1) {
         const text = chars[Math.floor(Math.random() * chars.length)];
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
@@ -51,7 +50,6 @@ function MatrixBackground() {
           drops[i] = 0;
         }
         drops[i] += 1;
-        i += 1;
       }
     };
 
