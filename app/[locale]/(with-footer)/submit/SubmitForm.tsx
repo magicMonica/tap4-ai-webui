@@ -2,7 +2,6 @@
 
 /* eslint-disable react/jsx-props-no-spreading */
 import { useState } from 'react';
-import { createClient } from '@/db/supabase/client';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
@@ -21,7 +20,6 @@ const FormSchema = z.object({
 });
 
 export default function SubmitForm({ className }: { className?: string }) {
-  const supabase = createClient();
   const t = useTranslations('Submit');
 
   const [loading, setLoading] = useState(false);
@@ -38,13 +36,19 @@ export default function SubmitForm({ className }: { className?: string }) {
     let errMsg: any = t('networkError');
     try {
       setLoading(true);
-      const { error } = await supabase.from('submit').insert({
-        name: formData.website,
-        url: formData.url,
-        // email: ''
+      const response = await fetch('/api/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.website,
+          url: formData.url,
+        }),
       });
-      if (error) {
-        errMsg = error.message;
+
+      if (!response.ok) {
+        errMsg = await response.text();
         throw new Error();
       }
       toast.success(t('success'));

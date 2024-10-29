@@ -8,6 +8,7 @@ import './globals.css';
 import { Suspense } from 'react';
 
 import GoogleAdScript from '@/components/ad/GoogleAdScript';
+import MatrixBackground from '@/components/effects/MatrixBackground';
 import SeoScript from '@/components/seo/SeoScript';
 
 import Loading from './loading';
@@ -23,7 +24,7 @@ export default function RootLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning className='dark'>
-      <body className='relative mx-auto flex min-h-screen flex-col bg-tap4-black text-white'>
+      <body className='bg-tap4-black relative mx-auto flex min-h-screen flex-col text-white'>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Toaster
             position='top-center'
@@ -39,6 +40,7 @@ export default function RootLayout({
           <Navigation />
           <Suspense fallback={<Loading />}>{children}</Suspense>
         </NextIntlClientProvider>
+        <MatrixBackground />
         <SeoScript />
         <GoogleAdScript />
       </body>
