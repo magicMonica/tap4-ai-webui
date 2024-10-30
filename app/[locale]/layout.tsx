@@ -1,7 +1,7 @@
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 
 import { Toaster } from '@/components/ui/sonner';
-import { NextAuthProvider as SessionProvider } from '@/components/context/next-auth-context';
+import NextAuthProvider from '@/components/context/next-auth-context';
 import Navigation from '@/components/home/Navigation';
 
 import './globals.css';
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning className='dark'>
       <body className='bg-tap4-black relative mx-auto flex min-h-screen flex-col text-white'>
-        <SessionProvider>
+        <NextAuthProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <Toaster
               position='top-center'
@@ -45,7 +45,7 @@ export default function RootLayout({
           <MatrixBackground />
           <SeoScript />
           <GoogleAdScript />
-        </SessionProvider>
+        </NextAuthProvider>
       </body>
     </html>
   );
