@@ -7,6 +7,7 @@ import { useTranslations } from 'next-intl';
 
 import { NAV_LINKS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
+import LoginButton from '@/components/auth/LoginButton';
 
 import BaseImage from '../image/BaseImage';
 import LocaleSwitcher from '../LocaleSwitcher';
@@ -60,6 +61,9 @@ export default function Navigation() {
                 </Link>
               ))}
             </ul>
+            <div className='flex items-center gap-x-3'>
+              {process.env.NEXT_PUBLIC_CHECK_GOOGLE_LOGIN !== '0' ? <LoginButton /> : null}
+            </div>
             <div className='flex items-center gap-x-3'>
               <LocaleSwitcher />
             </div>
