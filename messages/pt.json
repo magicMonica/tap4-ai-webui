@@ -137,6 +137,7 @@
     "website": "Nome do Website",
     "url": "URL do Website",
     "submit": "Enviar",
+    "pleaseLogin": "Por favor, faça login primeiro",
     "add": "Adicionar",
     "text": "para a página inicial do seu site. Em seguida, você pode enviar seu site com sucesso gratuitamente!",
     "networkError": "Erro de rede",

@@ -3,6 +3,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useSession } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
@@ -15,13 +16,13 @@ import { Input } from '@/components/ui/input';
 import Spinning from '@/components/Spinning';
 
 const FormSchema = z.object({
-  website: z.string(),
-  url: z.string().url(),
+  website: z.string().min(1, { message: 'Website name is required' }),
+  url: z.string().url({ message: 'Invalid URL' }),
 });
 
 export default function SubmitForm({ className }: { className?: string }) {
   const t = useTranslations('Submit');
-
+  const { data: session } = useSession();
   const [loading, setLoading] = useState(false);
 
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -33,6 +34,11 @@ export default function SubmitForm({ className }: { className?: string }) {
   });
 
   const onSubmit = async (formData: z.infer<typeof FormSchema>) => {
+    if (!session?.user?.email) {
+      toast.error(t('pleaseLogin'));
+      return;
+    }
+
     let errMsg: any = t('networkError');
     try {
       setLoading(true);
@@ -44,6 +50,7 @@ export default function SubmitForm({ className }: { className?: string }) {
         body: JSON.stringify({
           name: formData.website,
           url: formData.url,
+          email: session.user.email,
         }),
       });
 

@@ -137,6 +137,7 @@
     "website": "Nom du site",
     "url": "URL du site",
     "submit": "Soumettre",
+    "pleaseLogin": "Veuillez d'abord vous connecter",
     "add": "Ajouter",
     "text": "à la page d'accueil de votre site, et vous pouvez soumettre votre site gratuitement avec succès !",
     "networkError": "Erreur réseau",

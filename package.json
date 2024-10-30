@@ -43,6 +43,7 @@
     "next-themes": "0.3.0",
     "query-string": "9.0.0",
     "rc-pagination": "4.0.4",
+    "google-auth-library": "^9.10.0",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "7.51.2",

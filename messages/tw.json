@@ -137,6 +137,7 @@
     "website": "網站名稱",
     "url": "網站URL",
     "submit": "提交",
+    "pleaseLogin": "請先登入",
     "add": "添加",
     "text": "到您的網站首頁，然後您可以免費成功提交您的網站！",
     "networkError": "網路錯誤",
