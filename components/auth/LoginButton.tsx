@@ -5,12 +5,10 @@ import { signIn, signOut, useSession } from 'next-auth/react';
 import { Button } from '@/components/ui/button';
 
 export default function LoginButton() {
-  console.log('LoginButton');
+  const { data: session, status } = useSession();
 
-  const { data: session } = useSession();
-
+  console.log(status);
   console.log(session);
-
   if (session && session.user) {
     return (
       <div className='flex items-center gap-4'>
@@ -28,7 +26,7 @@ export default function LoginButton() {
       onClick={() => signIn('google')}
       className='border-neutral-700 bg-transparent text-neutral-100 transition-all hover:bg-neutral-800 hover:text-neutral-100'
     >
-      Log in with Google
+      Log in
     </Button>
   );
 }
