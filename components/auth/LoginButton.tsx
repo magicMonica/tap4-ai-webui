@@ -5,10 +5,7 @@ import { signIn, signOut, useSession } from 'next-auth/react';
 import { Button } from '@/components/ui/button';
 
 export default function LoginButton() {
-  const { data: session, status } = useSession();
-
-  console.log(status);
-  console.log(session);
+  const { data: session } = useSession();
   if (session && session.user) {
     return (
       <div className='flex items-center gap-4'>

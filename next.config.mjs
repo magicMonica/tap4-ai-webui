@@ -13,7 +13,7 @@ const nextConfig = {
     },
   },
   compiler: {
-    removeConsole: process.env.NODE_ENV === 'test',
+    removeConsole: process.env.NODE_ENV === 'production',
   },
   images: {
     unoptimized: true,
