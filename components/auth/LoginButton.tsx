@@ -28,7 +28,7 @@ export default function LoginButton() {
       onClick={() => signIn('google')}
       className='border-neutral-700 bg-transparent text-neutral-100 transition-all hover:bg-neutral-800 hover:text-neutral-100'
     >
-      Log in
+      Log in with Google
     </Button>
   );
 }
