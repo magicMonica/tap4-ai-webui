@@ -7,6 +7,8 @@ import { Button } from '@/components/ui/button';
 export default function LoginButton() {
   const { data: session } = useSession();
 
+  console.log(session);
+
   if (session && session.user) {
     return (
       <div className='flex items-center gap-4'>
