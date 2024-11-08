@@ -13,6 +13,9 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        game: ['Righteous', 'Chango', 'Press Start 2P', 'system-ui'],
+      },
       colors: {
         'tap4-balck': '#222129',
         'dark-bg': '#1E1B24',
@@ -76,6 +79,9 @@ const config = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'caret-blink': 'caret-blink 1.25s ease-out infinite',
+      },
+      boxShadow: {
+        neon: '0 0 5px theme("colors.blue.200"), 0 0 20px theme("colors.blue.700")',
       },
     },
   },

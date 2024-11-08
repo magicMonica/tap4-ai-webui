@@ -8,7 +8,13 @@
     "submit": "Submit",
     "newtools": "New Tools",
     "startup": "Startup",
-    "menu": "menu"
+    "menu": "menu",
+    "home": "Home",
+    "worldguessr": "WorldGuessr",
+    "emoji": "Emoji",
+    "guesswho": "GuessWho",
+    "trivia": "Trivia",
+    "wordle": "Wordle"
   },
   "Footer": {
     "title": "AI Guides Hub",
@@ -120,10 +126,10 @@
     "goHome": "go home"
   },
   "Home": {
-    "title": "Ultimate Guide Hub for AI",
-    "subTitle": "Unlock the Future of AI: Get your favorite AI tools in AI Guides Hub.  ",
-    "ai-navigate": "AI Tools List",
-    "exploreMore": "Get More AI Tools",
+    "title": "Cool Guess Game: Test Your Wits, Beat the Odds!",
+    "subTitle": "Dive into the world of clever guessing! Cool Guess Game offers thrilling challenges and mind-bending puzzles that keep you guessing, learning, and winning. Are you up for the challenge? ",
+    "ai-navigate": "Game List",
+    "exploreMore": "Get More Guessing Game",
     "checkDetail": "View Detail",
     "search": "Search",
     "result": "Search Result",
@@ -162,12 +168,12 @@
     }
   },
   "Explore": {
-    "title": "Ultimate Guide Hub for AI",
+    "title": "Cool Guess Game: Test Your Wits, Beat the Odds!",
     "subTitle": "Unlock the Future of AI: Get your favorite AI tools in AI Guides Hub."
   },
   "Metadata": {
     "home": {
-      "title": "Ultimate Guide Hub for AI | AI Guides Hub",
+      "title": "Cool Guess Game: Test Your Wits, Beat the Odds! | AI Guides Hub",
       "description": "AI Guides Hub is a tool provides free AI Tools Directory. Get your favorite AI tools with AI Guides Hub, AI Guides Hub aims to collect all the AI tools and provide the best for users.",
       "keywords": "AI Guides Hub"
     },
@@ -175,7 +181,7 @@
       "titleSubfix": "AI Guides Hub"
     },
     "explore": {
-      "title": "Ultimate Guide Hub for AI | AI Guides Hub",
+      "title": "Cool Guess Game: Test Your Wits, Beat the Odds! | AI Guides Hub",
       "titlePrefix": "AI Guides Hub Explore",
       "titleSuffix": "AI Guides Hub",
       "description": "AI Guides Hub is a tool provides free AI Tools Directory. Get your favorite AI tools with AI Guides Hub, AI Guides Hub aims to collect all the AI tools and provide the best for users.",

@@ -2,12 +2,10 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
-import { NAV_LINKS } from '@/lib/constants';
-import { cn } from '@/lib/utils';
 import LoginButton from '@/components/auth/LoginButton';
+import SearchForm from '@/components/home/SearchForm';
 
 import BaseImage from '../image/BaseImage';
 import LocaleSwitcher from '../LocaleSwitcher';
@@ -16,60 +14,48 @@ import NavigationDrawer from './NavigationDrawer';
 
 export default function Navigation() {
   const t = useTranslations('Navigation');
-  const pathname = usePathname();
 
   const [open, setOpen] = useState(false);
 
-  const NavLinks = NAV_LINKS.map((item) => ({
-    ...item,
-    label: t(`${item.code}`),
-  }));
-
   return (
     <>
-      <header className='bg-frosted-glass sticky left-0 top-0 z-50 flex h-[64px] bg-[#252A464A] px-5 blur-[60%] filter lg:px-0'>
+      <header className='sticky left-0 top-0 z-50 flex h-[64px] bg-[#AAAAFF] px-3 sm:px-5 lg:px-0'>
         <nav className='mx-auto flex max-w-pc flex-1 items-center'>
           <div>
             <Link className='hover:opacity-80' href='/' title={t('title')}>
               <BaseImage
-                src='/images/favicon.svg'
+                src='/favicon.ico'
                 alt={t('title')}
                 title={t('title')}
                 width={64}
                 height={64}
-                className='size-[58px] lg:size-16'
+                className='size-12 sm:size-[58px] lg:size-16'
               />
             </Link>
           </div>
           <div className='flex flex-col items-center lg:items-stretch'>
-            <p className='text-xl font-bold text-white lg:h-8 lg:text-[32px]'>AI Guides Hub</p>
+            <p className='animate-pulse font-game text-base font-bold tracking-wider text-white hover:animate-bounce sm:text-xl lg:h-8 lg:text-[32px]'>
+              🎮 Cool Guess Game 🎯
+            </p>
           </div>
           {/* pc */}
-          <div className='ml-auto flex h-full items-center gap-x-[46px]'>
-            <ul className='hidden h-full flex-1 capitalize lg:flex lg:gap-x-12'>
-              {NavLinks.map((item) => (
-                <Link key={item.code} href={item.href} title={item.code}>
-                  <li
-                    className={cn(
-                      'flex h-full items-center text-white/40 hover:text-white',
-                      pathname === item.href && 'text-white',
-                      pathname.includes(item.href) && item.href !== '/' && 'text-white',
-                    )}
-                  >
-                    {item.label}
-                  </li>
-                </Link>
-              ))}
-            </ul>
-            <div className='flex items-center gap-x-3'>
+          <div className='hidden w-full max-w-[600px] items-center justify-center px-4 lg:flex'>
+            <SearchForm />
+          </div>
+          {/* 移动端搜索框 */}
+          <div className='flex w-full max-w-[200px] items-center justify-center px-2 sm:max-w-[300px] lg:hidden'>
+            <SearchForm />
+          </div>
+          <div className='ml-auto flex h-full items-center gap-x-2 sm:gap-x-[46px]'>
+            <div className='flex items-center gap-x-2 sm:gap-x-3'>
               {process.env.NEXT_PUBLIC_CHECK_GOOGLE_LOGIN !== '0' ? <LoginButton /> : null}
             </div>
-            <div className='flex items-center gap-x-3'>
+            <div className='flex items-center gap-x-2 sm:gap-x-3'>
               <LocaleSwitcher />
             </div>
           </div>
           {/* mobile */}
-          <div className='mx-3 flex items-center gap-x-4 lg:hidden'>
+          <div className='ml-2 flex items-center gap-x-2 lg:hidden'>
             <MenuBtn open={open} onClick={() => setOpen(!open)} />
           </div>
         </nav>

@@ -3,15 +3,16 @@ import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { Toaster } from '@/components/ui/sonner';
 import NextAuthProvider from '@/components/context/next-auth-context';
 import Navigation from '@/components/home/Navigation';
+import SideNavigation from '@/components/home/SideNavigation';
 
 import './globals.css';
 
 import { Suspense } from 'react';
 
 import GoogleAdScript from '@/components/ad/GoogleAdScript';
-import MatrixBackground from '@/components/effects/MatrixBackground';
 import SeoScript from '@/components/seo/SeoScript';
 
+import styles from './GradientBackground.module.css';
 import Loading from './loading';
 
 export default function RootLayout({
@@ -25,9 +26,20 @@ export default function RootLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning className='dark'>
-      <body className='bg-tap4-black relative mx-auto flex min-h-screen flex-col text-white'>
+      <body className='bg-tap4-black relative min-h-screen text-white'>
+        <div className={styles.gradientBackground} />
+        <div className={styles.noiseOverlay} />
         <NextAuthProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
+            <div className='relative z-10 mx-auto flex min-h-screen max-w-[2000px]'>
+              <SideNavigation />
+              <div className='flex w-full flex-1 flex-col'>
+                <Navigation />
+                <main className='flex-1 p-4 md:p-6 lg:p-8'>
+                  <Suspense fallback={<Loading />}>{children}</Suspense>
+                </main>
+              </div>
+            </div>
             <Toaster
               position='top-center'
               toastOptions={{
@@ -39,10 +51,7 @@ export default function RootLayout({
                 },
               }}
             />
-            <Navigation />
-            <Suspense fallback={<Loading />}>{children}</Suspense>
           </NextIntlClientProvider>
-          <MatrixBackground />
           <SeoScript />
           <GoogleAdScript />
         </NextAuthProvider>

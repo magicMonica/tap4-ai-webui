@@ -1,11 +1,7 @@
 export const NAV_LINKS = [
   {
-    code: 'discover',
+    code: 'home',
     href: '/explore',
-  },
-  {
-    code: 'submit',
-    href: '/submit',
   },
 ];
 

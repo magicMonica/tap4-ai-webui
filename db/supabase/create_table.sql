@@ -42,3 +42,34 @@ CREATE TABLE IF NOT EXISTS public.web_navigation (
   category_name TEXT
 ) TABLESPACE pg_default;
 
+-- 创建用户表
+create table users (
+  id text primary key,
+  name text,
+  email text unique,
+  image text,
+  created_at timestamp with time zone default timezone('utc'::text, now()) not null
+);
+
+-- 创建会话表
+create table sessions (
+  id text primary key,
+  user_id text references users(id) on delete cascade,
+  expires timestamp with time zone not null
+);
+
+-- 创建账户表
+create table accounts (
+  id text primary key,
+  user_id text references users(id) on delete cascade,
+  type text,
+  provider text,
+  provider_account_id text,
+  refresh_token text,
+  access_token text,
+  expires_at bigint,
+  token_type text,
+  scope text,
+  id_token text,
+  session_state text
+);
