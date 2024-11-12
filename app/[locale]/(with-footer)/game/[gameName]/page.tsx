@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { createClient } from '@/db/supabase/client';
 import { getTranslations } from 'next-intl/server';
 
-import { CircleArrowRight } from '@/components/icons/CircleArrowRight';
+import CircleArrowRight from '@/components/icons/CircleArrowRight';
 import BaseImage from '@/components/image/BaseImage';
 import MarkdownProse from '@/components/MarkdownProse';
 
