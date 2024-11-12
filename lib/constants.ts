@@ -13,9 +13,9 @@ export const RevalidateOneMonth = 3600 * 24 * 30;
 export const PAGE_SIZE = 30;
 export const InfoPageSize = 20;
 
-export const FORM_PLACEHOLDER = 'https://aiguideshub.com/';
+export const FORM_PLACEHOLDER = 'https://coolguessgame.com/';
 
-export const WEBSITE_EXAMPLE = '<a href="https://aiguideshub.com/" title="AI Guides Hub">AI Guides Hub</a>';
+export const WEBSITE_EXAMPLE = '<a href="https://coolguessgame.com/" title="Cool Guess Game">Cool Guess Game</a>';
 
 export const STARTUP_LIST = [
   {

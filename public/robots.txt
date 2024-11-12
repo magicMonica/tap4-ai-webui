@@ -1,4 +1,4 @@
-Sitemap: https://www.aiguideshub.com/sitemap.xml
+Sitemap: https://www.coolguessgame.com/sitemap.xml
 
 User-agent: *
 Allow: /

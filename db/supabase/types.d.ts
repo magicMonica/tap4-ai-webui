@@ -142,6 +142,93 @@ export type Database = {
         };
         Relationships: [];
       };
+      gs_game_info: {
+        Row: {
+          id: number;
+          name: string;
+          title: string | null;
+          content: string | null;
+          detail: string | null;
+          iframe_url: string | null;
+          original_url: string | null;
+          image_url: string | null;
+          thumbnail_url: string | null;
+          website_data: string | null;
+          collection_time: string | null;
+          star_rating: number | null;
+          tag_name: string | null;
+          category_name: string | null;
+          create_time: string;
+        };
+        Insert: {
+          id?: number;
+          name: string;
+          title?: string | null;
+          content?: string | null;
+          detail?: string | null;
+          iframe_url?: string | null;
+          original_url?: string | null;
+          image_url?: string | null;
+          thumbnail_url?: string | null;
+          website_data?: string | null;
+          collection_time?: string | null;
+          star_rating?: number | null;
+          tag_name?: string | null;
+          category_name?: string | null;
+          create_time?: string;
+        };
+        Update: {
+          id?: number;
+          name?: string;
+          title?: string | null;
+          content?: string | null;
+          detail?: string | null;
+          iframe_url?: string | null;
+          original_url?: string | null;
+          image_url?: string | null;
+          thumbnail_url?: string | null;
+          website_data?: string | null;
+          collection_time?: string | null;
+          star_rating?: number | null;
+          tag_name?: string | null;
+          category_name?: string | null;
+          create_time?: string;
+        };
+        Relationships: [];
+      };
+      gs_game_category: {
+        Row: {
+          id: number;
+          name: string;
+          title: string | null;
+          image_url: string | null;
+          sort: number | null;
+          del_flag: number;
+          create_by: number;
+          create_time: string;
+        };
+        Insert: {
+          id?: never;
+          name: string;
+          title?: string | null;
+          image_url?: string | null;
+          sort?: number | null;
+          del_flag?: number;
+          create_by?: number;
+          create_time?: string;
+        };
+        Update: {
+          id?: never;
+          name?: string;
+          title?: string | null;
+          image_url?: string | null;
+          sort?: number | null;
+          del_flag?: number;
+          create_by?: number;
+          create_time?: string;
+        };
+        Relationships: [];
+      };
     };
     Views: {
       [_ in never]: never;
@@ -162,6 +249,8 @@ export type NavigationCategory = Database['public']['Tables']['navigation_catego
 export type Submit = Database['public']['Tables']['submit']['Row'];
 export type WebNavigation = Database['public']['Tables']['web_navigation']['Row'];
 export type Users = Database['public']['Tables']['users']['Row'];
+export type GsGameInfo = Database['public']['Tables']['gs_game_info']['Row'];
+export type GsGameCategory = Database['public']['Tables']['gs_game_category']['Row'];
 
 type PublicSchema = Database[Extract<keyof Database, 'public'>];
 

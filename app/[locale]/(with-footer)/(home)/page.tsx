@@ -1,16 +1,11 @@
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
 import { createClient } from '@/db/supabase/client';
-import { CircleChevronRight } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
 import { RevalidateOneHour } from '@/lib/constants';
 import Faq from '@/components/Faq';
-import SearchForm from '@/components/home/SearchForm';
 import WebNavCardList from '@/components/webNav/WebNavCardList';
-
-import { TagList } from './Tag';
 
 const ScrollToTop = dynamic(() => import('@/components/page/ScrollToTop'), { ssr: false });
 
@@ -40,10 +35,11 @@ export const revalidate = RevalidateOneHour;
 export default async function Page() {
   const supabase = createClient();
   const t = await getTranslations('Home');
-  const [{ data: categoryList }, { data: navigationList }] = await Promise.all([
-    supabase.from('navigation_category').select(),
-    supabase.from('web_navigation').select().order('collection_time', { ascending: false }).limit(24),
+  const [{ data: categoryList }, { data: gameList }] = await Promise.all([
+    supabase.from('gs_game_category').select(),
+    supabase.from('gs_game_info').select().order('collection_time', { ascending: false }).limit(24),
   ]);
+  console.log('categoryList:', categoryList);
 
   return (
     <div className='relative w-full'>
@@ -52,28 +48,16 @@ export default async function Page() {
           <h1 className='text-2xl font-bold text-white lg:text-5xl'>{t('title')}</h1>
           <h2 className='text-balance text-xs font-bold text-white lg:text-sm'>{t('subTitle')}</h2>
         </div>
-        <div className='flex w-full items-center justify-center'>
-          <SearchForm />
-        </div>
-        <div className='mb-10 mt-5'>
-          <TagList
-            data={(categoryList || []).map((item) => ({
-              id: String(item.id),
-              name: item.name,
-              href: `/category/${item.name}`,
-            }))}
-          />
-        </div>
-        <div className='flex flex-col gap-5'>
+        <div className='mb-10 flex flex-col gap-5 lg:mb-16'>
           <h2 className='text-center text-[18px] lg:text-[32px]'>{t('ai-navigate')}</h2>
-          <WebNavCardList dataList={navigationList!} />
-          <Link
+          <WebNavCardList dataList={gameList!} />
+          {/* <Link
             href='/explore'
             className='mx-auto mb-5 flex w-fit items-center justify-center gap-5 rounded-[9px] border border-white p-[10px] text-sm leading-4 hover:opacity-70'
           >
             {t('exploreMore')}
             <CircleChevronRight className='mt-[0.5] h-[20px] w-[20px]' />
-          </Link>
+          </Link> */}
         </div>
         <Faq />
         <ScrollToTop />

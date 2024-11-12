@@ -34,21 +34,26 @@ export default function Footer() {
 
   const FEATURE_LINKS = [
     {
-      title: t('submit'),
-      href: 'https://aiguideshub.com/submit',
+      title: 'WorldGuessr',
+      href: 'https://coolguessgame.com/game/worldguessr',
+      target: '_blank',
+    },
+    {
+      title: 'Wordler',
+      href: 'https://coolguessgame.com/game/wordler',
       target: '_blank',
     },
   ];
 
   const SUPPORT_LINKS = [
-    {
-      title: t('privacy'),
-      href: '/privacy-policy',
-    },
-    {
-      title: t('termsConditions'),
-      href: '/terms-of-service',
-    },
+    // {
+    //   title: t('privacy'),
+    //   href: '/privacy-policy',
+    // },
+    // {
+    //   title: t('termsConditions'),
+    //   href: '/terms-of-service',
+    // },
     {
       title: t('contactUs'),
       href: `mailto:${CONTACT_US_EMAIL}`,
