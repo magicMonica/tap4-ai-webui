@@ -28,9 +28,9 @@ export default async function Page({ params }: { params: { code: string; pageNum
   const currentPage = Number(params?.pageNum || 1);
 
   const [{ data: categoryList }, { data: navigationList, count }] = await Promise.all([
-    supabase.from('navigation_category').select().eq('name', params.code),
+    supabase.from('gs_game_category').select().eq('name', params.code),
     supabase
-      .from('web_navigation')
+      .from('gs_game_info')
       .select('*', { count: 'exact' })
       .eq('category_name', params.code)
       .range(0, InfoPageSize - 1),
