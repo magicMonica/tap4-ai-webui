@@ -33,9 +33,9 @@ export const revalidate = RevalidateOneHour / 2;
 export default async function Page({ params }: { params: { search?: string } }) {
   const supabase = createClient();
   const t = await getTranslations('Home');
-  const { data: categoryList } = await supabase.from('navigation_category').select();
+  const { data: categoryList } = await supabase.from('gs_game_category').select();
   const { data: dataList } = await supabase
-    .from('web_navigation')
+    .from('gs_game_info')
     .select()
     .or(
       `detail.ilike.%${decodeURI(params?.search || '')}%,` +
