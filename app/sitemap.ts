@@ -12,15 +12,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: 'explore',
+      url: 'game/wordle',
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1,
     },
     {
-      url: 'submit',
+      url: 'game/worldguessr',
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'daily',
       priority: 0.8,
     },
   ];
