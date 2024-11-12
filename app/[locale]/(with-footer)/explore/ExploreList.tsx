@@ -17,9 +17,9 @@ export default async function ExploreList({ pageNum }: { pageNum?: string }) {
   const end = start + WEB_PAGE_SIZE - 1;
 
   const [{ data: categoryList }, { data: navigationList, count }] = await Promise.all([
-    supabase.from('navigation_category').select(),
+    supabase.from('gs_game_category').select(),
     supabase
-      .from('web_navigation')
+      .from('gs_game_info')
       .select('*', { count: 'exact' })
       .order('collection_time', { ascending: false })
       .range(start, end),

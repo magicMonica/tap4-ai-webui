@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { WebNavigation } from '@/db/supabase/types';
+import { GsGameInfo } from '@/db/supabase/types';
 import { useTranslations } from 'next-intl';
 
 import Empty from '@/components/Empty';
@@ -16,7 +16,7 @@ export default function Content({
   route,
 }: {
   headerTitle: string;
-  navigationList: WebNavigation[];
+  navigationList: GsGameInfo[];
   currentPage: number;
   total: number;
   pageSize: number;
