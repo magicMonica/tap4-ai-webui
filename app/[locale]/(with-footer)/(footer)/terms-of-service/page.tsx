@@ -6,7 +6,7 @@ export default function Page() {
 
   return (
     <div
-      className='prose mx-auto p-6 pb-32 text-white prose-headings:text-white prose-p:text-gray-100 prose-li:text-gray-100'
+      className='prose mx-auto p-6 pb-16 text-white prose-headings:text-white prose-p:text-gray-100 prose-li:text-gray-100'
       style={{ backgroundColor: '#AAAAFF' }}
     >
       <h1>{t('1-h1')}</h1>
