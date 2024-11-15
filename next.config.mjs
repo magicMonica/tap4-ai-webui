@@ -27,6 +27,13 @@ const nextConfig = {
     ],
   },
   productionBrowserSourceMaps: false,
+  // 添加 Lockdown.js 配置
+  experimental: {
+    // 允许某些内置对象
+    allowedReactFormActions: true,
+    // 禁用 Lockdown.js
+    disableLockdown: true,
+  },
 };
 
 export default withNextIntl(nextConfig);
