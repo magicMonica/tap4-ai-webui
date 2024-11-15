@@ -46,14 +46,14 @@ export default function Footer() {
   ];
 
   const SUPPORT_LINKS = [
-    // {
-    //   title: t('privacy'),
-    //   href: '/privacy-policy',
-    // },
-    // {
-    //   title: t('termsConditions'),
-    //   href: '/terms-of-service',
-    // },
+    {
+      title: t('privacy'),
+      href: '/privacy-policy',
+    },
+    {
+      title: t('termsConditions'),
+      href: '/terms-of-service',
+    },
     {
       title: t('contactUs'),
       href: `mailto:${CONTACT_US_EMAIL}`,

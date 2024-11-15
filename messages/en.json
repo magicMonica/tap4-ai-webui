@@ -3,7 +3,7 @@
     "loading": "loading..."
   },
   "Navigation": {
-    "title": "Open-source Cool Guess Game Tools Directory",
+    "title": "Cool Guess Game ",
     "discover": "Discover AI",
     "submit": "Submit",
     "newtools": "New Tools",
@@ -31,26 +31,26 @@
   "Faq": {
     "title": "Frequently Asked Questions",
     "1": {
-      "question": "What is Open-source Cool Guess Game Tools Directory?",
-      "answer": "Cool Guess Game Tools Directory - coolguessgame.com is building an ai tools directory that helps you get your favorite ai tools. It can get ai writing tools, ai markting tools, ai paraphrasing tools, ai seo tools, ai study tools, ai generator tools, ai research tools, ai art tools, ai music tools, ai video tools, ai coding tools, ai photo tools and more here."
+      "question": "What is Cool Guess Game ?",
+      "answer": "Cool Guess Game  - coolguessgame.com is building an ai tools directory that helps you get your favorite ai tools. It can get ai writing tools, ai markting tools, ai paraphrasing tools, ai seo tools, ai study tools, ai generator tools, ai research tools, ai art tools, ai music tools, ai video tools, ai coding tools, ai photo tools and more here."
     },
     "2": {
-      "question": "How to found your ai tools in Cool Guess Game tools directory?",
+      "question": "How to found your ai tools in Cool Guess Game ?",
       "answer-1": "1. Open coolguessgame.com.",
-      "answer-2": "2. Explore the ai tools in the Cool Guess Game tools directory.",
+      "answer-2": "2. Explore the ai tools in the Cool Guess Game .",
       "answer-3": "3. Click the ai tools that you need to get the detail and visit it."
     },
     "3": {
-      "question": "What are the main features of Cool Guess Game Tools Directory?",
+      "question": "What are the main features of Cool Guess Game ?",
       "answer-1": "1. Free AI Tools Directory: It's free to found your favorite AI Tools here.",
       "answer-2": "2. Startup List: The free startup list for ai tools developers."
     },
     "4": {
-      "question": "Is it free to submit ai tools to Cool Guess Game Tools Directory?",
-      "answer": "Yes, it's free currently. But you should share the backlink for Cool Guess Game Tools Directory!"
+      "question": "Is it free to submit ai tools to Cool Guess Game ?",
+      "answer": "Yes, it's free currently. But you should share the backlink for Cool Guess Game !"
     },
     "5": {
-      "question": "What's the categories list of AI Tools that Cool Guess Game Tools Directory support?",
+      "question": "What's the categories list of AI Tools that Cool Guess Game  support?",
       "answer": "We will support all kinds of AI Tools later. Please wait for a few days."
     },
     "6": {
@@ -71,7 +71,7 @@
     },
     "10": {
       "question": "What are the usage rights of the AI tools?",
-      "answer": "Cool Guess Game Tools Directory is just the AI Directory for AI tools. The usage rights of the AI tools are based on the AI tools' website."
+      "answer": "Cool Guess Game  is just the AI Directory for AI tools. The usage rights of the AI tools are based on the AI tools' website."
     },
     "11": {
       "question": "Does the webui of Cool Guess Game is open source?",
@@ -80,7 +80,7 @@
   },
   "FooterNavigation": {
     "privacyPolicy": {
-      "1-h1": "Privacy Policy for Open-source Cool Guess Game Tools Directory",
+      "1-h1": "Privacy Policy for Cool Guess Game ",
       "1-p": "This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service. If you choose to use my Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that I collect is used for providing and improving the Service. I will not use or share your information with anyone except as described in this Privacy Policy. The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions.",
       "2-h2": "1. Information Collection and Use",
       "2-p": "For a better experience, while using our Service, I may require you to provide us with certain personally identifiable information. The information that I request will be retained on your device and is not collected by me in any way. The app does use third-party services that may collect information used to identify you.",
@@ -104,13 +104,14 @@
     },
     "termsConditions": {
       "1-h1": "Terms of Service for Cool Guess Game",
-      "1-p": "Welcome to Cool Guess Game! Our website, located at https://coolguessgame.com (\"Website\"), is dedicated to providing you with the ability to create custom images. By accessing or using our Website, you agree to be bound by these Terms of Service (\"Terms\"). If you do not agree with any part of the terms, then you are prohibited from using the Website.",
+      "1-p": "Welcome to Cool Guess Game! Our website, located at https://coolguessgame.com (\"Website\"), is dedicated to providing you with engaging guessing games and puzzle experiences. By accessing or using our Website, you agree to be bound by these Terms of Service (\"Terms\"). If you do not agree with any part of the terms, then you are prohibited from using the Website.",
       "2-h2": "1. Use License",
-      "2-p": "You are granted a limited, non-exclusive, non-transferable license to use the Website and its services for personal, non-commercial purposes. This license does not include any rights to copy, modify, or distribute the Website's content or use it for commercial purposes without our prior written consent.",
-      "3-h2": "2. Ownership",
-      "3-p": "The ownership of images generated from text on the Website belongs to the person who created the image. coolguessgame.com claims no ownership over images created by users.",
+      "2-p": "You are granted a limited, non-exclusive, non-transferable license to use the Website and its gaming services for personal, non-commercial purposes. This license does not include any rights to copy, modify, distribute, or reverse engineer any games or content on the Website, or use it for commercial purposes without our prior written consent.",
+      "3-h2": "2. Game Content and Third-Party Games",
+      "3-p": "All game content, including but not limited to graphics, game mechanics, and scoring systems on Cool Guess Game are protected by intellectual property rights. Your game progress and achievements belong to you, but the underlying game content remains the property of Cool Guess Game or respective third-party game providers. Some games on our platform may be provided by third parties. We do not claim ownership of third-party games and their respective rights remain with their original owners. Cool Guess Game is not responsible for the content, functionality or availability of third-party games.",
+      "3-p-2": "When accessing third-party games through our platform, you may be subject to additional terms of service from the respective game providers. We recommend reviewing those terms before playing such games.",
       "4-h2": "3. User Data Collection",
-      "4-p": "We collect personal data (name, email, and payment information) and non-personal data (web cookies) to improve our services. The use of this data is governed by our Privacy Policy, which can be found at",
+      "4-p": "We collect personal data (name, email) and non-personal data (game scores, progress, and web cookies) to improve our gaming services and user experience. The use of this data is governed by our Privacy Policy, which can be found at",
       "terms-of-service": "terms-of-service",
       "5-h2": "4. Governing Law",
       "5-p": "These Terms shall be governed and construed in accordance with the laws of the United States of America, without regard to its conflict of law provisions.",

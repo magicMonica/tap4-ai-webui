@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { createClient } from '@/db/supabase/client';
 import { getTranslations } from 'next-intl/server';
@@ -108,8 +109,9 @@ export default async function GameDetailPage({ params: { gameName } }: Props) {
           {/* 推荐游戏列表 */}
           <div className='space-y-4'>
             {recommendGameList?.map((item) => (
-              <div
+              <Link
                 key={item.id}
+                href={`/game/${item.name}`}
                 className='group flex cursor-pointer gap-3 rounded-lg p-2 transition-all hover:bg-gray-700/30'
               >
                 <div className='relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg'>
@@ -124,7 +126,7 @@ export default async function GameDetailPage({ params: { gameName } }: Props) {
                 <div className='flex flex-col justify-center'>
                   <h4 className='font-medium text-gray-100 transition-colors group-hover:text-white'>{item.title}</h4>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
