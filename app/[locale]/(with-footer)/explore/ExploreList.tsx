@@ -2,7 +2,7 @@ import { createClient } from '@/db/supabase/client';
 
 import SearchForm from '@/components/home/SearchForm';
 import BasePagination from '@/components/page/BasePagination';
-import WebNavCardList from '@/components/webNav/WebNavCardList';
+import GameCardList from '@/components/webNav/GameCardList';
 
 import { TagList } from '../(home)/Tag';
 
@@ -26,11 +26,11 @@ export default async function ExploreList({ pageNum }: { pageNum?: string }) {
   ]);
 
   return (
-    <>
-      <div className='flex w-full items-center justify-center'>
+    <div className='container mx-auto px-4'>
+      <div className='mb-8 flex w-full items-center justify-center'>
         <SearchForm />
       </div>
-      <div className='mb-10 mt-5'>
+      <div className='mb-12'>
         <TagList
           data={(categoryList || []).map((item) => ({
             id: String(item.id),
@@ -39,15 +39,17 @@ export default async function ExploreList({ pageNum }: { pageNum?: string }) {
           }))}
         />
       </div>
-      <WebNavCardList dataList={navigationList!} />
+      <div className='min-h-[400px]'>
+        <GameCardList dataList={navigationList!} />
+      </div>
       <BasePagination
         currentPage={currentPage}
         pageSize={WEB_PAGE_SIZE}
         total={count!}
         route='/explore'
         subRoute='/page'
-        className='my-5 lg:my-10'
+        className='my-8 lg:my-12'
       />
-    </>
+    </div>
   );
 }

@@ -3,6 +3,10 @@ export const NAV_LINKS = [
     code: 'home',
     href: '/explore',
   },
+  {
+    code: 'hotgames',
+    href: '/hotgames',
+  },
 ];
 
 export const RevalidateOneHour = 3600;

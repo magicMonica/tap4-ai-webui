@@ -8,7 +8,7 @@ import { RevalidateOneHour } from '@/lib/constants';
 import { Separator } from '@/components/ui/separator';
 import Empty from '@/components/Empty';
 import Faq from '@/components/Faq';
-import WebNavCardList from '@/components/webNav/WebNavCardList';
+import GameCardList from '@/components/webNav/GameCardList';
 
 import { TagList } from '../../Tag';
 import Loading from './loading';
@@ -61,7 +61,9 @@ export default async function Page({ params }: { params: { search?: string } }) 
         {dataList && !!dataList.length && params?.search ? (
           <>
             <h2 className='mb-1 text-left text-[18px] lg:text-2xl'>{t('result')}</h2>
-            <WebNavCardList dataList={dataList!} />
+            <div className='min-h-[400px]'>
+              <GameCardList dataList={dataList!} />
+            </div>
           </>
         ) : (
           <Empty title={t('empty')} />

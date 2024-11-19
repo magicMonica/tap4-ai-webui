@@ -5,7 +5,8 @@ import { getTranslations } from 'next-intl/server';
 
 import { RevalidateOneHour } from '@/lib/constants';
 import Faq from '@/components/Faq';
-import WebNavCardList from '@/components/webNav/WebNavCardList';
+import RecommendNav from '@/components/home/RecommendNav';
+import GameCardList from '@/components/webNav/GameCardList';
 
 const ScrollToTop = dynamic(() => import('@/components/page/ScrollToTop'), { ssr: false });
 
@@ -40,27 +41,43 @@ export default async function Page() {
     supabase.from('gs_game_info').select().order('collection_time', { ascending: false }).limit(24),
   ]);
   console.log('categoryList:', categoryList);
+  const { data: recommendGameList } = await supabase.from('gs_game_info').select().limit(6);
 
+  const t1 = await getTranslations('Game.detail');
   return (
     <div className='relative w-full'>
-      <div className='relative mx-auto w-full max-w-pc flex-1 px-3 lg:px-0'>
-        <div className='my-5 flex flex-col text-center lg:mx-auto lg:my-10 lg:gap-1'>
-          <h1 className='text-2xl font-bold text-white lg:text-5xl'>{t('title')}</h1>
-          <h2 className='text-balance text-xs font-bold text-white lg:text-sm'>{t('subTitle')}</h2>
+      <div className='relative mx-auto flex w-full max-w-[1440px] gap-5 px-8 lg:px-12'>
+        <div className='w-4/5'>
+          <div className='relative min-h-[800px] w-full overflow-hidden rounded-lg'>
+            <iframe
+              title={process.env.NEXT_PUBLIC_HOME_GAME_NAME}
+              src={process.env.NEXT_PUBLIC_HOME_GAME_URL}
+              className='absolute left-0 top-0 h-full w-full border-0'
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+              allowFullScreen
+            />
+          </div>
+          <div className='my-5 flex flex-col text-center lg:mx-auto lg:my-10 lg:gap-1'>
+            <h1 className='text-2xl font-bold text-white lg:text-5xl'>{t('title')}</h1>
+            <h2 className='text-balance text-xs font-bold text-white lg:text-sm'>{t('subTitle')}</h2>
+          </div>
+          <div className='mb-10 flex flex-col gap-5 lg:mb-16'>
+            <h2 className='text-center text-[18px] lg:text-[32px]'>{t('hotGames')}</h2>
+            <GameCardList dataList={gameList!} />
+          </div>
+          <Faq />
+          <ScrollToTop />
         </div>
-        <div className='mb-10 flex flex-col gap-5 lg:mb-16'>
-          <h2 className='text-center text-[18px] lg:text-[32px]'>{t('ai-navigate')}</h2>
-          <WebNavCardList dataList={gameList!} />
-          {/* <Link
-            href='/explore'
-            className='mx-auto mb-5 flex w-fit items-center justify-center gap-5 rounded-[9px] border border-white p-[10px] text-sm leading-4 hover:opacity-70'
-          >
-            {t('exploreMore')}
-            <CircleChevronRight className='mt-[0.5] h-[20px] w-[20px]' />
-          </Link> */}
+
+        <div className='w-1/5'>
+          <RecommendNav
+            recommendGameList={recommendGameList!}
+            translations={{
+              recommended: t1('recommended'),
+              moreGames: t1('moreGames'),
+            }}
+          />
         </div>
-        <Faq />
-        <ScrollToTop />
       </div>
     </div>
   );

@@ -159,6 +159,8 @@ export type Database = {
           tag_name: string | null;
           category_name: string | null;
           create_time: string;
+          hot_flag: boolean | null;
+          new_flag: boolean | null;
         };
         Insert: {
           id?: number;
@@ -176,6 +178,8 @@ export type Database = {
           tag_name?: string | null;
           category_name?: string | null;
           create_time?: string;
+          hot_flag?: boolean | null;
+          new_flag?: boolean | null;
         };
         Update: {
           id?: number;
@@ -193,6 +197,8 @@ export type Database = {
           tag_name?: string | null;
           category_name?: string | null;
           create_time?: string;
+          hot_flag?: boolean | null;
+          new_flag?: boolean | null;
         };
         Relationships: [];
       };

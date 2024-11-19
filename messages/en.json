@@ -14,7 +14,8 @@
     "emoji": "Emoji",
     "guesswho": "GuessWho",
     "trivia": "Trivia",
-    "wordle": "Wordle"
+    "wordle": "Wordle",
+    "hotgames": "Hot Games"
   },
   "Footer": {
     "title": "Cool Guess Game",
@@ -134,7 +135,9 @@
     "checkDetail": "View Detail",
     "search": "Search",
     "result": "Search Result",
-    "empty": "No data available"
+    "empty": "No data available",
+    "newGames": "New Games",
+    "hotGames": "Hot Games"
   },
   "Category": {
     "home": "home",
@@ -170,13 +173,13 @@
   },
   "Explore": {
     "title": "Cool Guess Game: Test Your Wits, Beat the Odds!",
-    "subTitle": "Unlock the Future of AI: Get your favorite AI tools in Cool Guess Game."
+    "subTitle": "Join Cool Guess Game for thrilling puzzles and clever challenges! Test your wits with games like Wordler, QuizzLand, and more!"
   },
   "Metadata": {
     "home": {
       "title": "Cool Guess Game: Test Your Wits, Beat the Odds! | Cool Guess Game",
-      "description": "Cool Guess Game is a tool provides free AI Tools Directory. Get your favorite AI tools with Cool Guess Game, Cool Guess Game aims to collect all the AI tools and provide the best for users.",
-      "keywords": "Cool Guess Game"
+      "description": "Join Cool Guess Game for thrilling puzzles and clever challenges! Test your wits with games like Wordler, QuizzLand, and more!",
+      "keywords": "Cool Guess Game,Free Game"
     },
     "ai": {
       "titleSubfix": "Cool Guess Game"
@@ -185,8 +188,13 @@
       "title": "Cool Guess Game: Test Your Wits, Beat the Odds! | Cool Guess Game",
       "titlePrefix": "Cool Guess Game Explore",
       "titleSuffix": "Cool Guess Game",
-      "description": "Cool Guess Game is a tool provides free AI Tools Directory. Get your favorite AI tools with Cool Guess Game, Cool Guess Game aims to collect all the AI tools and provide the best for users.",
-      "keywords": "Cool Guess Game"
+      "description": "Join Cool Guess Game for thrilling puzzles and clever challenges! Test your wits with games like Wordler, QuizzLand, and more!",
+      "keywords": "Cool Guess Game,Free Game"
+    },
+    "hotgames": {
+      "title": "Cool Guess Game: Test Your Wits, Beat the Odds! | Cool Guess Game",
+      "description": "Join Cool Guess Game for thrilling puzzles and clever challenges! Test your wits with games like Wordler, QuizzLand, and more!",
+      "keywords": "Cool Guess Game,Free Game"
     },
     "submit": {
       "title": "Submit your AI tool and get Get Traffic | Cool Guess Game"
