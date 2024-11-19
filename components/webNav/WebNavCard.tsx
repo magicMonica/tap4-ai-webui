@@ -23,15 +23,6 @@ export default function WebNavCard({ name, thumbnail_url, title, content }: GsGa
           {t('checkDetail')} <CircleArrowRight className='size-4' />
         </div>
       </Link>
-      {/* <div className='flex items-center justify-between px-1'>
-        <a href={iframe_url || ''} title={title || ''} target='_blank' rel='nofollow' className='transition-opacity hover:opacity-80'>
-          <h3 className='line-clamp-1 flex-1 text-xs font-bold lg:text-sm'>{title || ''}</h3>
-        </a>
-        <a href={iframe_url || ''} title={title || ''} target='_blank' rel='nofollow' className='transition-opacity hover:opacity-80'>
-          <SquareArrowOutUpRight className='size-4' />
-          <span className='sr-only'>{title || ''}</span>
-        </a>
-      </div> */}
       <p className='line-clamp-2 px-1 text-xs text-white/70 lg:line-clamp-3'>{content || ''}</p>
     </div>
   );
