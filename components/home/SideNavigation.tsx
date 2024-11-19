@@ -28,8 +28,8 @@ export default function SideNavigation({ className }: { className?: string }) {
             <div key='divider' className='mx-2 h-[1px] bg-white/20' />
           ) : (
             <Link
-              key={item.href}
-              href={item.href}
+              key={item.href || ''}
+              href={item.href || ''}
               className='flex items-center gap-3 rounded-lg p-2
                 transition-all duration-300 hover:bg-white/10'
             >
