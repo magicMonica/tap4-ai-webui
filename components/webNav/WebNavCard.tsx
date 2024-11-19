@@ -16,7 +16,7 @@ export default function WebNavCard({ name, thumbnail_url, title, content }: GsGa
           alt={title || ''}
           title={title || ''}
           width={288}
-          height={162}
+          height={165}
           className='aspect-video w-full rounded-xl bg-white/20 transition-opacity hover:opacity-80'
         />
         <div className='absolute inset-0 z-10 hidden items-center justify-center gap-1 rounded-xl bg-black/40 text-xl text-white transition-all duration-300 group-hover:flex'>
