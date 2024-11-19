@@ -10,11 +10,11 @@ export default function WebNavCard({ name, thumbnail_url, title, content }: GsGa
 
   return (
     <div className='flex h-[180px] flex-col gap-2 rounded-xl bg-secondary/40 p-1 lg:h-[280px]'>
-      <Link href={`/game/${name}`} title={title || ''} className='group relative'>
+      <Link href={`/game/${name}`} title={title ? title : ''} className='group relative'>
         <img
-          src={thumbnail_url || ''}
-          alt={title || ''}
-          title={title || ''}
+          src={thumbnail_url ? thumbnail_url : ''}
+          alt={title ? title : ''}
+          title={title ? title : ''}
           width={288}
           height={165}
           className='aspect-video w-full rounded-xl bg-white/20 transition-opacity hover:opacity-80'
@@ -23,7 +23,7 @@ export default function WebNavCard({ name, thumbnail_url, title, content }: GsGa
           {t('checkDetail')} <CircleArrowRight className='size-4' />
         </div>
       </Link>
-      <p className='line-clamp-2 px-1 text-xs text-white/70 lg:line-clamp-3'>{content || ''}</p>
+      <p className='line-clamp-2 px-1 text-xs text-white/70 lg:line-clamp-3'>{content ? content : ''}</p>
     </div>
   );
 }
