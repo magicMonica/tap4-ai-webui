@@ -23,10 +23,11 @@ export default function SideNavigation({ className }: { className?: string }) {
         p-3 shadow-lg backdrop-blur-sm transition-all duration-300
         hover:z-50 hover:w-[200px] hover:bg-[#AAAAFF]/30'
       >
-        {menuItems.map((item) =>
-          item.type === 'divider' ? (
-            <div key='divider' className='mx-2 h-[1px] bg-white/20' />
-          ) : (
+        {menuItems.map((item) => {
+          if (item.type === 'divider') {
+            return <div key='divider' className='mx-2 h-[1px] bg-white/20' />;
+          }
+          return (
             <Link
               key={item.href || ''}
               href={item.href || ''}
@@ -41,8 +42,8 @@ export default function SideNavigation({ className }: { className?: string }) {
                 {item.label}
               </span>
             </Link>
-          ),
-        )}
+          );
+        })}
       </div>
     </nav>
   );
