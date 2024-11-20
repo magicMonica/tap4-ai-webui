@@ -8,7 +8,8 @@
     "submit": "提交",
     "newtools": "新工具",
     "startup": "创业公司",
-    "menu": "菜单"
+    "menu": "菜单",
+    "category": "分类"
   },
   "Footer": {
     "title": "AI Guides Hub工具目录",
@@ -131,7 +132,8 @@
   },
   "Category": {
     "home": "首页",
-    "empty": "无数据"
+    "empty": "无数据",
+    "categoryCount": "分类统计"
   },
   "Submit": {
     "title": "提交您的AI工具",

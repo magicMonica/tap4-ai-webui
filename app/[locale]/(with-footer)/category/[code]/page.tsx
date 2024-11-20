@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
 import { createClient } from '@/db/supabase/client';
 
 import { InfoPageSize, RevalidateOneHour } from '@/lib/constants';
@@ -15,7 +14,9 @@ export async function generateMetadata({ params }: { params: { code: string } })
   const { data: categoryList } = await supabase.from('navigation_category').select().eq('name', params.code);
 
   if (!categoryList || !categoryList[0]) {
-    notFound();
+    return {
+      title: params.code,
+    };
   }
 
   return {
@@ -30,12 +31,24 @@ export default async function Page({ params }: { params: { code: string } }) {
     supabase
       .from('web_navigation')
       .select('*', { count: 'exact' })
-      .like('category_name', `%${params.code}%`)
+      .or(
+        `category_name.ilike.%${decodeURI(params?.code || '')}%,` +
+          `category_name.ilike.%${decodeURI(params?.code || '').replace(/-/g, ' ')}%`,
+      )
       .range(0, InfoPageSize - 1),
   ]);
 
   if (!categoryList || !categoryList[0]) {
-    notFound();
+    return (
+      <Content
+        headerTitle={params.code}
+        navigationList={navigationList!}
+        currentPage={1}
+        total={count!}
+        pageSize={InfoPageSize}
+        route={`/category/${params.code}`}
+      />
+    );
   }
 
   return (

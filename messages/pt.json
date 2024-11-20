@@ -8,7 +8,8 @@
     "submit": "Enviar",
     "newtools": "Novas Ferramentas",
     "startup": "Inicialização",
-    "menu": "menu"
+    "menu": "menu",
+    "category": "Categoria"
   },
   "Footer": {
     "title": "Tap4 Diretório de Ferramentas de IA",
@@ -129,7 +130,8 @@
   },
   "Category": {
     "home": "Início",
-    "empty": "Nenhum dado disponível"
+    "empty": "Nenhum dado disponível",
+    "categoryCount": "Estatísticas de categorias"
   },
   "Submit": {
     "title": "Envie sua Ferramenta de IA",

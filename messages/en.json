@@ -8,7 +8,8 @@
     "submit": "Submit",
     "newtools": "New Tools",
     "startup": "Startup",
-    "menu": "menu"
+    "menu": "menu",
+    "category": "Category"
   },
   "Footer": {
     "title": "AI Guides Hub",
@@ -131,7 +132,8 @@
   },
   "Category": {
     "home": "home",
-    "empty": "No data available"
+    "empty": "No data available",
+    "categoryCount": "Category Count"
   },
   "Submit": {
     "title": "Submit your AI Tool",

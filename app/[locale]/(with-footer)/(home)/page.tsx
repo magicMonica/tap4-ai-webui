@@ -41,7 +41,7 @@ export default async function Page() {
   const supabase = createClient();
   const t = await getTranslations('Home');
   const [{ data: categoryList }, { data: navigationList }] = await Promise.all([
-    supabase.from('navigation_category').select(),
+    supabase.from('navigation_category').select().order('sort', { ascending: false }).limit(14),
     supabase.from('web_navigation').select().order('collection_time', { ascending: false }).limit(24),
   ]);
 

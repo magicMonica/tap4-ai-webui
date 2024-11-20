@@ -32,12 +32,24 @@ export default async function Page({ params }: { params: { code: string; pageNum
     supabase
       .from('web_navigation')
       .select('*', { count: 'exact' })
-      .eq('category_name', params.code)
-      .range(0, InfoPageSize - 1),
+      .or(
+        `category_name.ilike.%${decodeURI(params?.code || '')}%,` +
+          `category_name.ilike.%${decodeURI(params?.code || '').replace(/-/g, ' ')}%`,
+      )
+      .range((currentPage - 1) * InfoPageSize, currentPage * InfoPageSize - 1),
   ]);
 
   if (!categoryList || !categoryList[0]) {
-    notFound();
+    return (
+      <Content
+        headerTitle={params.code}
+        navigationList={navigationList!}
+        currentPage={currentPage}
+        total={count!}
+        pageSize={InfoPageSize}
+        route={`/category/${params.code}`}
+      />
+    );
   }
 
   return (

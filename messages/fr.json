@@ -8,7 +8,8 @@
     "submit": "Soumettre",
     "newtools": "Nouveaux outils",
     "startup": "Startups",
-    "menu": "Menu"
+    "menu": "Menu",
+    "category": "Catégorie"
   },
   "Footer": {
     "title": "Répertoire des outils AI de Tap4",
@@ -129,7 +130,8 @@
   },
   "Category": {
     "home": "Accueil",
-    "empty": "Aucune donnée disponible"
+    "empty": "Aucune donnée disponible",
+    "categoryCount": "Statistiques de catégories"
   },
   "Submit": {
     "title": "Soumettez votre outil AI",

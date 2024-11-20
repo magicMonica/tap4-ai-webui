@@ -8,7 +8,8 @@
     "submit": "提出する",
     "newtools": "新しいツール",
     "startup": "スタートアップ",
-    "menu": "メニュー"
+    "menu": "メニュー",
+    "category": "カテゴリ"
   },
   "Footer": {
     "title": "AI Guides Hub ツールディレクトリ",
@@ -121,7 +122,8 @@
   },
   "Category": {
     "home": "ホーム",
-    "empty": "データがありません"
+    "empty": "データがありません",
+    "categoryCount": "カテゴリ統計"
   },
   "Submit": {
     "title": "AIツールを提出する",

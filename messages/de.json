@@ -8,7 +8,8 @@
     "submit": "Einreichen",
     "newtools": "Neue Tools",
     "startup": "Startup",
-    "menu": "Menü"
+    "menu": "Menü",
+    "category": "Kategorie"
   },
   "Footer": {
     "title": "AI Guides Hub Tools Verzeichnis",
@@ -129,7 +130,8 @@
   },
   "Category": {
     "home": "Startseite",
-    "empty": "Keine Daten verfügbar"
+    "empty": "Keine Daten verfügbar",
+    "categoryCount": "Kategorie-Statistik"
   },
   "Submit": {
     "title": "Reichen Sie Ihr KI-Tool ein",

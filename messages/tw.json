@@ -8,7 +8,8 @@
     "submit": "提交",
     "newtools": "新工具",
     "startup": "創業公司",
-    "menu": "菜單"
+    "menu": "菜單",
+    "category": "分類"
   },
   "Footer": {
     "title": "AI Guides Hub工具目錄",
@@ -129,7 +130,8 @@
   },
   "Category": {
     "home": "首頁",
-    "empty": "無數據"
+    "empty": "無數據",
+    "categoryCount": "分類統計"
   },
   "Submit": {
     "title": "提交您的AI工具",
