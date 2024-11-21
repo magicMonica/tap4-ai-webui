@@ -42,8 +42,9 @@ export default async function Page() {
     }
   });
 
-  // 转换为排序后的数组
+  // 转换为排序后的数组，并过滤掉出现次数<=3的分类
   const sortedCategories = Object.entries(categoryCount)
+    .filter(([, count]) => count > 3)
     .sort(([, a], [, b]) => b - a)
     .map(([name, count]) => ({ name, count }));
 
