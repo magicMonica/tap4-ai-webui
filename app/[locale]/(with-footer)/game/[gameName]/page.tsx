@@ -48,19 +48,20 @@ export default async function GameDetailPage({ params: { gameName } }: Props) {
   const game = gameList[0];
 
   return (
-    <div className='mx-auto w-full max-w-7xl pb-16'>
-      <div className='grid grid-cols-1 gap-8 px-6 lg:grid-cols-[1fr,300px] lg:px-12'>
-        {/* 左侧主要内容区域 */}
-        <div className='space-y-8'>
+    <div className='mx-auto w-full max-w-[1440px] pb-16'>
+      <div className='relative mx-auto flex w-full gap-5 px-8 lg:px-12'>
+        {/* 左侧主要内容区域 - 调整为 w-4/5 */}
+        <div className='w-4/5 space-y-8'>
           {/* 游戏区域 */}
           <div className='aspect-[16/9] w-full overflow-hidden rounded-lg bg-gray-900'>
             <iframe
-              sandbox='allow-same-origin allow-scripts'
+              sandbox='allow-same-origin allow-scripts allow-popups allow-forms allow-storage-access-by-user-activation'
               src={game.iframe_url || game.original_url || ''}
               className='h-full w-full'
               frameBorder='0'
               allow='gamepad *;'
               title={game.title || ''}
+              allowFullScreen
             />
           </div>
           {/* 游戏信息区域 */}
@@ -101,13 +102,16 @@ export default async function GameDetailPage({ params: { gameName } }: Props) {
           </div>
         </div>
 
-        <RecommendNav
-          recommendGameList={recommendGameList!}
-          translations={{
-            recommended: t1('recommended'),
-            moreGames: t1('moreGames'),
-          }}
-        />
+        {/* 右侧推荐区域 - 调整为 w-1/5 */}
+        <div className='w-1/5'>
+          <RecommendNav
+            recommendGameList={recommendGameList!}
+            translations={{
+              recommended: t1('recommended'),
+              moreGames: t1('moreGames'),
+            }}
+          />
+        </div>
       </div>
     </div>
   );

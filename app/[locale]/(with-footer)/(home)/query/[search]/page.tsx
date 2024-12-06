@@ -5,9 +5,7 @@ import { createClient } from '@/db/supabase/client';
 import { getTranslations } from 'next-intl/server';
 
 import { RevalidateOneHour } from '@/lib/constants';
-import { Separator } from '@/components/ui/separator';
 import Empty from '@/components/Empty';
-import Faq from '@/components/Faq';
 import GameCardList from '@/components/webNav/GameCardList';
 
 import { TagList } from '../../Tag';
@@ -40,9 +38,10 @@ export default async function Page({ params }: { params: { search?: string } }) 
     .or(
       `detail.ilike.%${decodeURI(params?.search || '')}%,` +
         `title.ilike.%${decodeURI(params?.search || '')}%,` +
-        `name.ilike.%${decodeURI(params?.search || '')}%` +
+        `name.ilike.%${decodeURI(params?.search || '')}%, ` +
         `tag_name.ilike.%${decodeURI(params?.search || '')}%`,
     );
+  console.log(`query search: ${dataList?.length}`);
 
   return (
     <Suspense fallback={<Loading />}>
@@ -52,25 +51,25 @@ export default async function Page({ params }: { params: { search?: string } }) 
             data={(categoryList || []).map((item) => ({
               id: String(item.id),
               name: item.name,
-              href: `/category/${item.name}`,
+              href: `/query/${item.name}`,
             }))}
           />
         )}
       </div>
       <section className='flex flex-col gap-5'>
-        {dataList && !!dataList.length && params?.search ? (
+        {dataList && dataList.length > 0 && params?.search ? (
           <>
             <h2 className='mb-1 text-left text-[18px] lg:text-2xl'>{t('result')}</h2>
             <div className='min-h-[400px]'>
-              <GameCardList dataList={dataList!} />
+              <div className='grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'>
+                <GameCardList dataList={dataList} />
+              </div>
             </div>
           </>
         ) : (
           <Empty title={t('empty')} />
         )}
       </section>
-      <Separator className='mx-auto my-10 h-px w-4/5 bg-[#2C2D36] lg:my-16' />
-      <Faq />
       <ScrollToTop />
     </Suspense>
   );

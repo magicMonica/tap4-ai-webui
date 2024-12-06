@@ -144,11 +144,14 @@
     "empty": "No data available"
   },
   "Submit": {
-    "title": "Submit your AI Tool",
-    "subTitle": "Submit your AI Tool and Get traffic from Cool Guess Game",
-    "website": "Website Name",
-    "url": "Website URL",
+    "title": "Submit your game",
+    "subTitle": "",
+    "website": "Game Name",
+    "url": "Game URL",
     "submit": "Submit",
+    "iframeUrl": "Game iframe URL",
+    "originImageUrl": "Game origin image URL",
+    "detail": "Game detail",
     "pleaseLogin": "Please login first",
     "add": "Add",
     "text": "to your website homepage, And then you can submit your website successfully for free！",

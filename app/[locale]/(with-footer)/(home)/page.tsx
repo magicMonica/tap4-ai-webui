@@ -36,11 +36,17 @@ export const revalidate = RevalidateOneHour;
 export default async function Page() {
   const supabase = createClient();
   const t = await getTranslations('Home');
-  const [{ data: categoryList }, { data: gameList }] = await Promise.all([
+  const [{ data: categoryList }, { data: gameList = [] }] = await Promise.all([
     supabase.from('gs_game_category').select(),
-    supabase.from('gs_game_info').select().order('collection_time', { ascending: false }).limit(24),
+    supabase
+      .from('gs_game_info')
+      .select()
+      .eq('hot_flag', true)
+      .order('collection_time', { ascending: false })
+      .limit(24),
   ]);
   console.log('categoryList:', categoryList);
+  console.log('gameList:', gameList);
   const { data: recommendGameList } = await supabase.from('gs_game_info').select().limit(6);
 
   const t1 = await getTranslations('Game.detail');
@@ -61,9 +67,15 @@ export default async function Page() {
             <h1 className='text-2xl font-bold text-white lg:text-5xl'>{t('title')}</h1>
             <h2 className='text-balance text-xs font-bold text-white lg:text-sm'>{t('subTitle')}</h2>
           </div>
-          <div className='mb-10 flex flex-col gap-5 lg:mb-16'>
-            <h2 className='text-center text-[18px] lg:text-[32px]'>{t('hotGames')}</h2>
-            <GameCardList dataList={gameList!} />
+          <div className='mb-10 flex flex-col gap-8 lg:mb-20'>
+            <h2 className='text-center text-lg font-semibold lg:text-3xl'>{t('hotGames')}</h2>
+            <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+              {gameList && gameList.length > 0 ? (
+                <GameCardList dataList={gameList} />
+              ) : (
+                <div className='text-center text-gray-400'>暂无热门游戏</div>
+              )}
+            </div>
           </div>
           <Faq />
           <ScrollToTop />

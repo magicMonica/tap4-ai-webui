@@ -26,30 +26,36 @@ export default async function ExploreList({ pageNum }: { pageNum?: string }) {
   ]);
 
   return (
-    <div className='container mx-auto px-4'>
-      <div className='mb-8 flex w-full items-center justify-center'>
+    <section className='container mx-auto px-4 py-6 lg:py-12'>
+      <div className='mx-auto mb-8 max-w-2xl lg:mb-12'>
         <SearchForm />
       </div>
-      <div className='mb-12'>
+
+      <div className='mb-8 lg:mb-12'>
         <TagList
           data={(categoryList || []).map((item) => ({
             id: String(item.id),
             name: item.name,
-            href: `/category/${item.name}`,
+            href: `/query/${item.name}`,
           }))}
         />
       </div>
-      <div className='min-h-[400px]'>
-        <GameCardList dataList={navigationList!} />
+
+      {/* 移除 min-height，添加网格容器 */}
+      <div className='mb-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:mb-12 lg:grid-cols-4 xl:grid-cols-6'>
+        <GameCardList dataList={navigationList || []} />
       </div>
-      <BasePagination
-        currentPage={currentPage}
-        pageSize={WEB_PAGE_SIZE}
-        total={count!}
-        route='/explore'
-        subRoute='/page'
-        className='my-8 lg:my-12'
-      />
-    </div>
+
+      <div className='flex justify-center'>
+        <BasePagination
+          currentPage={currentPage}
+          pageSize={WEB_PAGE_SIZE}
+          total={count!}
+          route='/explore'
+          subRoute='/page'
+          className='py-8'
+        />
+      </div>
+    </section>
   );
 }

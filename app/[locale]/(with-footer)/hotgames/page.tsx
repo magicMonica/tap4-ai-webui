@@ -5,9 +5,7 @@ import { createClient } from '@/db/supabase/client';
 import { getTranslations } from 'next-intl/server';
 
 import { RevalidateOneHour } from '@/lib/constants';
-import { Separator } from '@/components/ui/separator';
 import Empty from '@/components/Empty';
-import Faq from '@/components/Faq';
 import GameCardList from '@/components/webNav/GameCardList';
 
 import Loading from '../(home)/query/[search]/loading';
@@ -36,12 +34,12 @@ export default async function Page() {
 
   return (
     <Suspense fallback={<Loading />}>
-      <div className='container mx-auto px-4 py-8'>
-        <section className='flex flex-col gap-8'>
+      <div className='container mx-auto flex justify-center px-4 py-8'>
+        <section className='flex w-full max-w-7xl flex-col gap-8'>
           {dataList && dataList.length > 0 ? (
             <>
-              <h2 className='text-2xl font-bold md:text-3xl lg:text-4xl'>{t('hotGames')}</h2>
-              <div className='min-h-[400px] w-full'>
+              <h2 className='text-center text-2xl font-bold md:text-3xl lg:text-4xl'>{t('hotGames')}</h2>
+              <div className='grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'>
                 <GameCardList dataList={dataList} />
               </div>
             </>
@@ -49,8 +47,6 @@ export default async function Page() {
             <Empty title={t('empty')} />
           )}
         </section>
-        <Separator className='my-16 h-[1px] w-full bg-[#2C2D36]' />
-        <Faq />
         <ScrollToTop />
       </div>
     </Suspense>

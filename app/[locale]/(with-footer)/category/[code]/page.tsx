@@ -30,7 +30,10 @@ export default async function Page({ params }: { params: { code: string } }) {
     supabase
       .from('gs_game_info')
       .select('*', { count: 'exact' })
-      .eq('category_name', params.code)
+      .or(
+        `category_name.ilike.%${decodeURI(params?.code || '')}%,` +
+          `category_name.ilike.%${decodeURI(params?.code || '').replace(/-/g, ' ')}%`,
+      )
       .range(0, InfoPageSize - 1),
   ]);
 

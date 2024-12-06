@@ -235,6 +235,45 @@ export type Database = {
         };
         Relationships: [];
       };
+      gs_game_submit: {
+        Row: {
+          id: number;
+          created_at: string;
+          name: string | null;
+          url: string | null;
+          iframe_url: string | null;
+          email: string | null;
+          is_feature: number | null;
+          status: number | null;
+          origin_image_url: string | null;
+          detail: string | null;
+        };
+        Insert: {
+          id?: number;
+          created_at?: string;
+          name?: string | null;
+          url?: string | null;
+          iframe_url?: string | null;
+          email?: string | null;
+          is_feature?: number | null;
+          status?: number | null;
+          origin_image_url?: string | null;
+          detail?: string | null;
+        };
+        Update: {
+          id?: number;
+          created_at?: string;
+          name?: string | null;
+          url?: string | null;
+          iframe_url?: string | null;
+          email?: string | null;
+          is_feature?: number | null;
+          status?: number | null;
+          origin_image_url?: string | null;
+          detail?: string | null;
+        };
+        Relationships: [];
+      };
     };
     Views: {
       [_ in never]: never;
@@ -257,6 +296,7 @@ export type WebNavigation = Database['public']['Tables']['web_navigation']['Row'
 export type Users = Database['public']['Tables']['users']['Row'];
 export type GsGameInfo = Database['public']['Tables']['gs_game_info']['Row'];
 export type GsGameCategory = Database['public']['Tables']['gs_game_category']['Row'];
+export type GsGameSubmit = Database['public']['Tables']['gs_game_submit']['Row'];
 
 type PublicSchema = Database[Extract<keyof Database, 'public'>];
 
